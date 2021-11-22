@@ -32,6 +32,7 @@ Route::get('sumofsquares','ViewController@sumofSqs');
 //2 versi = ada yg 2 file, ada yg 1
 //bagi yang 2 file, harus membuat 2 route identifier
 
+//pegawai
 Route::get('/pegawai','PegawaiController@index');
 
 Route::get('/pegawai/tambah','PegawaiController@tambah');
@@ -41,3 +42,15 @@ Route::get('/pegawai/edit/{id}','PegawaiController@edit');
 Route::post('/pegawai/update','PegawaiController@update');
 
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+
+
+//mutasi_tugasweek13
+Route::get('/mutasi','MutasiController@index');
+
+Route::get('/mutasi/tambah','MutasiController@tambah');
+Route::post('/mutasi/store','MutasiController@store');
+
+Route::get('/mutasi/edit/{id}','MutasiController@edit');
+Route::post('/mutasi/update','MutasiController@update');
+
+Route::get('/mutasi/hapus/{id}','MutasiController@hapus');
