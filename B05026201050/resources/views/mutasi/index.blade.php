@@ -16,17 +16,19 @@
 	<table border="1">
 		<tr>
 
-			<th>ID Pegawai</th>
+			<th>ID</th>
+            <th>IDPegawai</th>
 			<th>Departemen</th>
-			<th>Sub Departemen</th>
-			<th>Mulai Bertugas</th>
+			<th>SubDepartemen</th>
+			<th>MulaiBertugas</th>
             <th>Opsi</th>
 
 		</tr>
 		@foreach($mutasi as $m)
 		<tr>
 
-			<td>{{ $m->mutasi_idpegawai }}</td>
+			<td>{{ $m->mutasi_id }}</td>
+            <td>{{ $m->mutasi_idpegawai }}</td>
 			<td>{{ $m->mutasi_departemen }}</td>
 			<td>{{ $m->mutasi_subdepartemen }}</td>
             <td>{{ $m->mutasi_mulaibertugas }}</td>
