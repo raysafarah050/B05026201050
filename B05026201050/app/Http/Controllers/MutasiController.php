@@ -20,7 +20,8 @@ class MutasiController extends Controller
     {
 
         // memanggil view tambah
-        return view('mutasi.tambah');
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
+        return view('mutasi.tambah', ['pegawai' => $pegawai]);
     }
 
     public function store(Request $request)
@@ -40,8 +41,9 @@ class MutasiController extends Controller
     {
         // mengambil data mutasi berdasarkan id yang dipilih
         $mutasi = DB::table('mutasi')->where('mutasi_id', $id)->get();
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
         // passing data mutasi yang didapat ke view edit.blade.php
-        return view('mutasi.edit', ['mutasi' => $mutasi]);
+        return view('mutasi.edit', ['mutasi' => $mutasi, 'pegawai' => $pegawai]);
     }
 
     public function update(Request $request)

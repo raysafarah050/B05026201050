@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Membuat CRUD Pada Laravel - Mutasi</title>
-</head>
-<body>
+@extends('layout.ceria')
 
-	<h2>Raysa Farah Mumtaz Ramadina 5026201050</h2>
-	<h3>Data Mutasi</h3>
+@section('title', 'DATA MUTASI PEGAWAI')
 
-	<a href="/mutasi/tambah"> + Tambah Data Baru</a>
+@section('isikonten')
+
+@section('judulhalaman', 'Data Mutasi Pegawai')
+
+	<a href="/mutasi/tambah" class="btn btn-primary"> + Tambah Data Mutasi Baru</a>
 
 	<br/>
 	<br/>
 
-	<table border="1">
+	<table class="table table-success table-striped">
 		<tr>
 
 			<th>ID</th>
@@ -33,14 +31,13 @@
 			<td>{{ $m->mutasi_subdepartemen }}</td>
             <td>{{ $m->mutasi_mulaibertugas }}</td>
 			<td>
-				<a href="/mutasi/edit/{{ $m->mutasi_id }}">Edit</a>
+				<a href="/mutasi/edit/{{ $m->mutasi_id }}" class="btn btn-warning">Edit</a>
 				|
-				<a href="/mutasi/hapus/{{ $m->mutasi_id }}">Hapus</a>
+				<a href="/mutasi/hapus/{{ $m->mutasi_id }}" class="btn btn-danger">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-
-
 </body>
 </html>
+@endsection
