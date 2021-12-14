@@ -18,7 +18,7 @@
                 {{ $t->namatumbuhan }}
             </div>
             <div class="form-group">
-		        <label for="jabatan" class="col-sm-2 control-label">Jumlah Tumbuhan: </label>
+		        <label for="jumlah" class="col-sm-2 control-label">Jumlah Tumbuhan: </label>
                 {{ $t->jumlahtumbuhan }}
             </div>
             <div class="form-group">
