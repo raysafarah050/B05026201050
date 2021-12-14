@@ -29,8 +29,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/pegawai">Pegawai</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/absen">Absen</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/mutasi">Mutasi</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Minggu Depan</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Praktikum</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/tumbuhan">Tumbuhan</a>
             </div>
             </div>
             <!-- Page content wrapper-->
@@ -41,7 +40,7 @@
                     <div class="row">
                         <div style="background-color:#F8C8DC" class="jumbotron">
                             <div class="col-md-2 col-xs-12">
-                                <img src="{{ asset('images/raysa.jpg')}}" class="rounded-circle" style="width:115px;height:140px">
+                                <img src="{{ asset('images/raysa.jpg')}}" class="rounded" style="width:115px;height:140px">
                             </div>
                         <h3>Raysa Farah Mumtaz Ramadina</h3>
                         <h4>5026201050</h4>
@@ -52,13 +51,14 @@
                 <h2><a href="https://www.malasngoding.com"></a></h2>
                 <h3>@yield('judulhalaman')</h3>
 
+                @section('isikonten')
+                @show
                 <footer class="page-footer">
-                    <div class="fixed-bottom text-center">© 2021 Hak Cipta oleh Raysa Farah Mumtaz Ramadina 5026201050
+                    <div class="mt-auto text-center">© 2021 Hak Cipta oleh Raysa Farah Mumtaz Ramadina 5026201050
                     </div>
                 </footer>
 
-                @section('isikonten')
-                @show
+
             </div>
         </div>
     </div>

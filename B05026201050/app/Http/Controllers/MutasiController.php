@@ -10,11 +10,32 @@ class MutasiController extends Controller
     public function index()
     {
         // mengambil data dari table mutasi
-        $mutasi = DB::table('mutasi')->get();
+        //$mutasi = DB::table('mutasi')->get();
+        $mutasi = DB::table('mutasi')
+        ->join('pegawai', 'mutasi.mutasi_idpegawai', '=', 'pegawai.pegawai_id')
+        ->select('mutasi.*', 'pegawai.pegawai_nama')
+        ->paginate(5) ;
 
         // mengirim data mutasi ke view index
         return view('mutasi.index', ['mutasi' => $mutasi]);
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$mutasi = DB::table('mutasi')
+        ->join('pegawai', 'mutasi.mutasi_idpegawai', '=', 'pegawai.pegawai_id')
+		->where('pegawai.pegawai_nama','like',"%".$cari."%")
+        ->orWhere('mutasi.mutasi_departemen', 'like', "%".$cari."%")
+		->paginate();
+
+    		// mengirim data pegawai ke view index
+		return view('mutasi.index',['mutasi' => $mutasi]);
+
+	}
 
     public function tambah()
     {
@@ -44,6 +65,19 @@ class MutasiController extends Controller
         $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
         // passing data mutasi yang didapat ke view edit.blade.php
         return view('mutasi.edit', ['mutasi' => $mutasi, 'pegawai' => $pegawai]);
+    }
+
+    public function detail($id)
+    {
+        // mengambil data pegawai berdasarkan id yang dipilih
+        //$absen = DB::table('absen')->where('ID', $id)->get();
+        $mutasi = DB::table('mutasi')
+        ->where('mutasi_id', $id)
+        ->join('pegawai', 'mutasi.mutasi_idpegawai', '=', 'pegawai.pegawai_id')
+        ->get();
+
+        // passing data pegawai yang didapat ke view edit.blade.php
+        return view('mutasi.detail', ['mutasi' => $mutasi]);
     }
 
     public function update(Request $request)

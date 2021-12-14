@@ -11,13 +11,20 @@
 	<br/>
 	<br/>
 
+    <div class="container">
+        <form action="/mutasi/cari" method="GET">
+            <input type="text" name="cari" placeholder="Cari Pegawai atau Departemen.." value="{{ old('cari') }}">
+            <input type="submit" value="CARI">
+        </form> </div>
+
+    <br>
+
 	<table class="table table-success table-striped">
 		<tr>
 
-			<th>ID</th>
-            <th>IDPegawai</th>
+
+            <th>Nama Pegawai</th>
 			<th>Departemen</th>
-			<th>SubDepartemen</th>
 			<th>MulaiBertugas</th>
             <th>Opsi</th>
 
@@ -25,19 +32,23 @@
 		@foreach($mutasi as $m)
 		<tr>
 
-			<td>{{ $m->mutasi_id }}</td>
-            <td>{{ $m->mutasi_idpegawai }}</td>
+
+            <td>{{ $m->pegawai_nama }}</td>
 			<td>{{ $m->mutasi_departemen }}</td>
-			<td>{{ $m->mutasi_subdepartemen }}</td>
             <td>{{ $m->mutasi_mulaibertugas }}</td>
 			<td>
-				<a href="/mutasi/edit/{{ $m->mutasi_id }}" class="btn btn-warning">Edit</a>
+
+                <a href="/mutasi/view/{{ $m->mutasi_id }}" class="btn btn-info">View Detail</a>
+                |
+                <a href="/mutasi/edit/{{ $m->mutasi_id }}" class="btn btn-warning">Edit</a>
 				|
 				<a href="/mutasi/hapus/{{ $m->mutasi_id }}" class="btn btn-danger">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
+
+    {{ $mutasi->links() }}
 </body>
 </html>
 @endsection
