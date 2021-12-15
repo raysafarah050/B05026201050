@@ -72,3 +72,8 @@ Route::post('/tumbuhan/update','TumbuhanController@update');
 Route::get('/tumbuhan/hapus/{id}','TumbuhanController@hapus');
 Route::get('/tumbuhan/cari','TumbuhanController@cari');
 Route::get('/tumbuhan/view/{id}','TumbuhanController@detail');
+
+//nilaikuliah (EAS)
+Route::get('/nilaikuliah','NilaiKuliahController@index');
+Route::get('/nilaikuliah/tambah','NilaiKuliahController@tambah');
+Route::post('/nilaikuliah/store','NilaiKuliahController@store');

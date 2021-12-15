@@ -30,6 +30,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/absen">Absen</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/mutasi">Mutasi</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/tumbuhan">Tumbuhan</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/nilaikuliah">Nilai Kuliah</a>
             </div>
             </div>
             <!-- Page content wrapper-->
